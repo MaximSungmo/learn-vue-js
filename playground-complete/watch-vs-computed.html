@@ -12,7 +12,18 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <script>
+    /*
+    watch 와 computed 사용 시
+    일반적으로는 computed 사용으로 대부분 해결할 수 있음
+    캐싱 또는 내부적인 튜닝이 더 많이 되어있음
+
+    따라서 watch 보다는 computed 로 값 계산처리하는 게 더 나을 수 있음
+
+    상황봐서 고민해보자
+
+     */
     new Vue({
       el: '#app',
       data: {
@@ -25,13 +36,14 @@
       },
       watch: {
         num: function(newValue, oldValue) {
+          console.log("oldValue", oldValue)
           this.fetchUserByNumber(newValue);
         }
       },
       methods: {
         fetchUserByNumber: function(num) {
-          // console.log(num);
-          axios.get(num);
+          console.log(num);
+          // axios.get(num);
         }
       }
     });
