@@ -12,11 +12,18 @@
       <router-link to="/login">Login</router-link>
       <router-link to="/main">Main</router-link>
     </div>
+    <div>테스트</div>
+
+    <!-- 라우터가 뷰 인스턴스의 route: 라우터인스턴스 로 들어갔을 때, 라우팅된 뷰가 표현되는 위치 지정 -->
     <router-view></router-view>
   </div>
 
+  <!-- 순서 중요 -->
+  <!-- 뷰 라이브러리 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- 라우터 라이브러리 -->
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
   <script>
     var LoginComponent = {
       template: '<div>login</div>'
@@ -32,7 +39,7 @@
         {
           // 페이지의 url
           path: '/login',
-          // name: 'login',
+          name: 'login',
           // 해당 url에서 표시될 컴포넌트
           component: LoginComponent
         },
@@ -41,7 +48,8 @@
           path: '/main',
           component: MainComponent
         }
-      ]
+      ],
+      // mode: history
     });
 
     new Vue({
