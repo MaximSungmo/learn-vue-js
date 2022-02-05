@@ -19,7 +19,9 @@
       data: {
         num: 10
       },
+      // 데이터의 값을 가져와서 변경되는 것을 지켜보고 있도록 요청하는 기능
       watch: {
+        // num 값이 변경될 때 마다 로직 실행
         num: function() {
           this.logText();
         }
